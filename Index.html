@@ -5,33 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Scientifix Afrika</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-  background:#111;
-  padding:20px;
+  background:#0b0b0b;
+  font-family:'Montserrat',sans-serif;
+  overflow-x:hidden;
 }
 
+/* MAIN CONTAINER */
 .grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  max-width:1400px;
+  width:100%;
+  max-width:1000px;
   margin:auto;
+  display:flex;
+  flex-direction:column; /* STACKED NOT SIDE BY SIDE */
+  gap:18px;
+  padding:18px;
 }
 
+/* GENERAL SLIDE */
 .slide{
+  width:100%;
   background:#fff;
-  min-height:430px;
+  min-height:100vh;
   position:relative;
   overflow:hidden;
-  border:3px solid #000;
+  border:4px solid #000;
 }
 
 .dark{
@@ -39,92 +47,133 @@ body{
   color:#fff;
 }
 
+.content{
+  padding:50px;
+}
+
+/* COLORS */
+
 .red{
-  color:#ff2c2c;
+  color:#ff2b2b;
 }
 
 .green{
-  color:#11d05f;
+  color:#11d15c;
 }
 
-.small{
-  font-size:14px;
-  line-height:1.6;
-  color:#444;
-}
+/* SECTION NUMBER */
 
 .section-number{
-  color:#ff2c2c;
-  font-size:40px;
-  font-weight:800;
+  color:#ff2b2b;
+  font-size:50px;
+  font-weight:900;
+  margin-bottom:10px;
 }
+
+/* TITLES */
 
 .title{
-  font-size:40px;
-  font-weight:800;
-  margin-bottom:15px;
+  font-size:58px;
+  font-weight:900;
+  line-height:1;
+  margin-bottom:30px;
 }
 
+/* TEXT */
+
+.small{
+  font-size:19px;
+  line-height:1.8;
+  color:#444;
+  font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+  height:100%;
+  padding:70px 60px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  z-index:2;
+}
+
+.hero-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+
+.africa-bg{
+  position:absolute;
+  right:-80px;
+  top:20px;
+  width:500px;
+  opacity:.25;
+}
+
+/* LOGO */
+
 .logo{
-  width:110px;
-  height:90px;
-  border-left:30px solid transparent;
-  border-right:30px solid transparent;
-  border-bottom:70px solid #fff;
-  margin:auto;
+  width:160px;
+  height:130px;
+  border-left:45px solid transparent;
+  border-right:45px solid transparent;
+  border-bottom:100px solid white;
   position:relative;
 }
 
 .logo:after{
   content:'';
   position:absolute;
-  left:-15px;
-  top:28px;
-  width:30px;
-  height:22px;
+  left:-22px;
+  top:42px;
+  width:44px;
+  height:30px;
   background:#050505;
 }
 
-.hero{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  height:100%;
-  padding:40px;
-}
+/* HERO TEXT */
 
 .hero h1{
-  color:#ff2c2c;
-  font-size:48px;
-  margin-top:25px;
+  color:#ff2b2b;
+  font-size:55px;
+  margin-top:35px;
   font-weight:900;
 }
 
 .hero h2{
-  font-size:42px;
-  line-height:1.2;
-  margin-top:30px;
+  font-size:58px;
+  line-height:1.15;
+  margin-top:45px;
+  font-weight:800;
+  max-width:700px;
 }
 
-.hero h2 span{
-  color:#11d05f;
-}
+/* BUTTON BOXES */
 
 .box-row{
   display:flex;
-  gap:20px;
-  margin-top:45px;
+  gap:18px;
+  margin-top:50px;
+  flex-wrap:wrap;
 }
 
 .box{
-  border:2px solid #333;
-  padding:18px 25px;
+  border:2px solid #222;
   border-radius:14px;
-  font-size:18px;
+  padding:18px 28px;
+  display:flex;
+  align-items:center;
+  gap:12px;
   background:#0e0e0e;
+  font-weight:700;
+  font-size:16px;
 }
+
+/* FOOTER */
 
 .footer{
   position:absolute;
@@ -133,250 +182,378 @@ body{
   width:100%;
   background:#000;
   color:#fff;
-  padding:14px 20px;
-  font-size:14px;
+  padding:14px 30px;
   display:flex;
   justify-content:space-between;
+  font-size:14px;
+  font-weight:600;
 }
 
-.content{
-  padding:35px;
-}
+/* ROW */
 
 .row{
   display:flex;
-  gap:25px;
+  gap:40px;
+  align-items:center;
 }
+
+/* IMAGE */
 
 .img{
-  background:#ddd;
-  border-radius:20px;
   flex:1;
-  min-height:220px;
+  min-height:320px;
+  border-radius:0 0 0 80px;
+  background-size:cover;
+  background-position:center;
 }
 
+/* ABOUT */
+
+.about-image{
+  background-image:url('https://images.unsplash.com/photo-1581092919535-7146ff1a5903?q=80&w=1200&auto=format&fit=crop');
+}
+
+/* OBJECTIVE IMAGE */
+
+.objective-image{
+  background-image:url('https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1200&auto=format&fit=crop');
+}
+
+/* BLACK CARD */
+
 .black-card{
-  background:#0a0a0a;
+  background:#090909;
   color:#fff;
-  border-radius:18px;
-  padding:25px;
+  border-radius:24px;
+  padding:35px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:25px;
-  margin-top:30px;
+  gap:30px;
+  margin-top:35px;
 }
 
 .black-card h3{
-  color:#ff2c2c;
-  margin-bottom:10px;
+  color:#ff2b2b;
+  font-size:28px;
+  margin-bottom:12px;
 }
+
+/* ICON ROW */
 
 .icons{
   display:flex;
   justify-content:space-between;
-  margin-top:35px;
-  text-align:center;
   gap:20px;
+  margin-top:45px;
+  text-align:center;
 }
 
 .icon{
   flex:1;
+  font-size:15px;
+  font-weight:700;
 }
 
 .icon-circle{
-  width:55px;
-  height:55px;
-  border:3px solid #11d05f;
+  width:65px;
+  height:65px;
   border-radius:50%;
-  margin:auto auto 12px;
+  border:4px solid #11d15c;
+  margin:auto auto 15px;
 }
 
+/* OBJECTIVES */
+
 .objective-list{
-  margin-top:25px;
   display:flex;
   flex-direction:column;
-  gap:18px;
+  gap:22px;
 }
 
 .objective{
   display:flex;
-  gap:15px;
+  gap:18px;
   align-items:flex-start;
 }
 
 .objective span{
-  background:#ff2c2c;
+  width:38px;
+  height:38px;
+  background:#ff2b2b;
   color:#fff;
-  width:35px;
-  height:35px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-weight:bold;
+  font-weight:800;
 }
 
-.two-col{
+/* WHAT WE DO */
+
+.services{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  margin-top:25px;
+  grid-template-columns:repeat(5,1fr);
+  gap:20px;
+  margin-top:50px;
 }
 
 .service{
   text-align:center;
 }
 
-.service .icon-circle{
-  border-color:#11d05f;
+.service h4{
+  margin-top:15px;
+  margin-bottom:12px;
+  font-size:17px;
+  font-weight:800;
 }
 
-.service h4{
-  margin-top:10px;
-  margin-bottom:10px;
+.service p{
+  font-size:14px;
+  line-height:1.6;
+  color:#555;
 }
+
+/* FEATURES */
 
 .feature-cards{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:15px;
-  margin-top:25px;
+  gap:22px;
+  margin-top:40px;
 }
 
 .feature{
-  background:#0b0b0b;
+  background:#090909;
   color:#fff;
-  padding:25px;
-  border-radius:16px;
+  padding:35px;
+  border-radius:22px;
 }
 
 .feature h3{
-  margin-top:15px;
-  margin-bottom:10px;
+  margin-top:18px;
+  margin-bottom:15px;
+  font-size:28px;
 }
+
+/* IMPACT */
 
 .impact-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:15px;
-  margin-top:30px;
+  gap:20px;
+  margin-top:40px;
 }
 
 .impact{
-  background:#0b0b0b;
+  background:#0a0a0a;
   color:#fff;
-  padding:25px;
-  border-radius:15px;
-  min-height:180px;
+  padding:30px;
+  border-radius:20px;
+  min-height:260px;
 }
+
+.impact h3{
+  margin-top:15px;
+  margin-bottom:15px;
+  font-size:24px;
+}
+
+/* PEOPLE */
 
 .people-row{
   display:grid;
   grid-template-columns:repeat(6,1fr);
-  gap:15px;
-  margin-top:40px;
-}
-
-.person{
+  gap:20px;
+  margin-top:55px;
   text-align:center;
 }
 
-.person .icon-circle{
-  border-color:#000;
-}
+/* PARTNERS */
 
 .partners{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:30px;
-  margin-top:35px;
+  gap:40px;
+  align-items:center;
+  margin-top:40px;
 }
 
 .handshake{
-  background:#ddd;
-  border-radius:25px;
-  min-height:220px;
+  min-height:360px;
+  border-radius:0 0 0 90px;
+  background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
 }
 
 .check-list{
   display:flex;
   flex-direction:column;
-  gap:18px;
-  justify-content:center;
+  gap:24px;
 }
 
 .check{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:16px;
+  font-weight:600;
 }
 
-.check .dot{
-  width:22px;
-  height:22px;
-  border:2px solid #999;
+.dot{
+  width:26px;
+  height:26px;
   border-radius:50%;
+  border:3px solid #bbb;
 }
+
+/* TIMELINE */
 
 .timeline{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  margin-top:90px;
   position:relative;
+  margin-top:80px;
 }
 
 .timeline:before{
   content:'';
   position:absolute;
-  top:28px;
+  top:35px;
   left:0;
   width:100%;
   height:4px;
-  background:#ff2c2c;
+  background:#ff2b2b;
 }
 
 .step{
+  width:18%;
+  text-align:center;
   position:relative;
   z-index:2;
   background:#fff;
-  padding:10px;
-  width:16%;
-  text-align:center;
 }
 
-.step .icon-circle{
-  border-color:#11d05f;
-}
+/* CONTACT */
 
 .contact{
+  height:100%;
+  padding:80px 60px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  height:100%;
-  padding:60px;
-}
-
-.contact-left{
-  color:#fff;
 }
 
 .contact-left h1{
-  color:#ff2c2c;
-  font-size:48px;
-  margin-top:20px;
+  color:#ff2b2b;
+  font-size:55px;
+  margin-top:30px;
 }
 
-.contact-right{
-  color:#fff;
-  font-size:22px;
-  line-height:2;
+.contact-left h2{
+  margin-top:20px;
+  font-size:34px;
 }
 
 .vertical-line{
-  width:2px;
-  height:250px;
-  background:#11d05f;
+  width:3px;
+  height:280px;
+  background:#11d15c;
 }
+
+.contact-right{
+  font-size:22px;
+  line-height:2.1;
+}
+
+.contact-right h2{
+  font-size:38px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .slide{
+    min-height:auto;
+  }
+
+  .content,
+  .hero,
+  .contact{
+    padding:35px 24px;
+  }
+
+  .title{
+    font-size:38px;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero h2{
+    font-size:36px;
+  }
+
+  .row,
+  .partners,
+  .contact{
+    flex-direction:column;
+    display:flex;
+  }
+
+  .services{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .impact-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .feature-cards{
+    grid-template-columns:1fr;
+  }
+
+  .people-row{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .black-card{
+    grid-template-columns:1fr;
+  }
+
+  .icons{
+    flex-wrap:wrap;
+  }
+
+  .timeline{
+    flex-direction:column;
+    gap:40px;
+  }
+
+  .timeline:before{
+    display:none;
+  }
+
+  .step{
+    width:100%;
+  }
+
+  .vertical-line{
+    display:none;
+  }
+
+  .services{
+    gap:40px 20px;
+  }
+
+  .africa-bg{
+    width:280px;
+    right:-80px;
+  }
+
+}
+
 </style>
 </head>
 
@@ -384,8 +561,11 @@ body{
 
 <div class="grid">
 
-  <!-- 01 -->
-  <div class="slide dark">
+  <!-- HERO -->
+  <section class="slide dark">
+
+    <img class="africa-bg" src="https://upload.wikimedia.org/wikipedia/commons/8/86/Africa_%28orthographic_projection%29.svg">
+
     <div class="hero">
 
       <div class="logo"></div>
@@ -393,15 +573,25 @@ body{
       <h1>SCIENTIFIX AFRIKA</h1>
 
       <h2>
-        INNOVATING AFRICA<br/>
-        THROUGH SCIENCE,<br/>
-        <span>TECHNOLOGY & EDUCATION</span>
+        INNOVATING AFRICA
+        THROUGH SCIENCE,
+        <span class="green">TECHNOLOGY & EDUCATION</span>
       </h2>
 
       <div class="box-row">
-        <div class="box">INSPIRE MINDS</div>
-        <div class="box">DRIVE INNOVATION</div>
-        <div class="box">BUILD AFRICA</div>
+
+        <div class="box">
+          INSPIRE MINDS
+        </div>
+
+        <div class="box">
+          DRIVE INNOVATION
+        </div>
+
+        <div class="box">
+          BUILD AFRICA
+        </div>
+
       </div>
 
     </div>
@@ -410,45 +600,58 @@ body{
       <span>COMPANY PROFILE</span>
       <span>www.scientifixafrika.com</span>
     </div>
-  </div>
 
-  <!-- 02 -->
-  <div class="slide">
+  </section>
+
+  <!-- ABOUT -->
+  <section class="slide">
+
     <div class="content">
 
       <div class="section-number">01</div>
       <div class="title">ABOUT US</div>
 
       <div class="row">
+
         <div style="flex:1;">
+
           <p class="small">
-            Scientifix AFRIKA is a forward-thinking African initiative dedicated to science,
+            Scientifix AFRIKA is a forward-thinking African initiative committed to science,
             technology, and innovation across the continent.
           </p>
 
-          <br/>
+          <br><br>
 
           <p class="small">
-            Our mission is to make science simple, relatable and applicable to everyday life.
+            Our mission is to make science simple, relatable, and applicable to everyday life while inspiring the next generation of African innovators.
           </p>
+
         </div>
 
-        <div class="img"></div>
+        <div class="img about-image"></div>
+
       </div>
 
       <div class="black-card">
+
         <div>
           <h3>VISION</h3>
-          <p>To become Africa's leading platform for scientific innovation and youth empowerment.</p>
+          <p>
+            To become Africa’s leading platform for scientific innovation, education and youth empowerment.
+          </p>
         </div>
 
         <div>
           <h3>MISSION</h3>
-          <p>To educate, inspire and equip Africans with practical scientific knowledge.</p>
+          <p>
+            To educate, inspire and equip Africans with practical scientific and technological knowledge.
+          </p>
         </div>
+
       </div>
 
       <div class="icons">
+
         <div class="icon">
           <div class="icon-circle"></div>
           YOUTH FOCUSED
@@ -468,13 +671,16 @@ body{
           <div class="icon-circle"></div>
           AFRICA IMPACT
         </div>
+
       </div>
 
     </div>
-  </div>
 
-  <!-- 03 -->
-  <div class="slide">
+  </section>
+
+  <!-- OBJECTIVES -->
+  <section class="slide">
+
     <div class="content">
 
       <div class="section-number">02</div>
@@ -483,6 +689,7 @@ body{
       <div class="row">
 
         <div style="flex:1;">
+
           <div class="objective-list">
 
             <div class="objective">
@@ -511,284 +718,62 @@ body{
             </div>
 
           </div>
+
         </div>
 
-        <div class="img"></div>
+        <div class="img objective-image"></div>
 
       </div>
 
     </div>
-  </div>
 
-  <!-- 04 -->
-  <div class="slide">
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="slide">
+
     <div class="content">
 
       <div class="section-number">03</div>
       <div class="title">WHAT WE DO</div>
 
-      <div class="two-col">
+      <div class="services">
 
         <div class="service">
           <div class="icon-circle"></div>
           <h4>DIGITAL CONTENT</h4>
-          <p class="small">Engaging science and tech content.</p>
+          <p>Engaging science and tech content.</p>
         </div>
 
         <div class="service">
           <div class="icon-circle"></div>
           <h4>STEM TRAINING</h4>
-          <p class="small">Practical sessions for students.</p>
+          <p>Practical training for students.</p>
         </div>
 
         <div class="service">
           <div class="icon-circle"></div>
-          <h4>INNOVATION & RESEARCH</h4>
-          <p class="small">Development of real-world solutions.</p>
+          <h4>INNOVATION</h4>
+          <p>Real-world solution development.</p>
         </div>
 
         <div class="service">
           <div class="icon-circle"></div>
-          <h4>AWARENESS CAMPAIGNS</h4>
-          <p class="small">Community outreach across Africa.</p>
+          <h4>AWARENESS</h4>
+          <p>Community outreach campaigns.</p>
+        </div>
+
+        <div class="service">
+          <div class="icon-circle"></div>
+          <h4>PARTNERSHIPS</h4>
+          <p>Collaborations and support.</p>
         </div>
 
       </div>
 
     </div>
-  </div>
 
-  <!-- 05 -->
-  <div class="slide">
-    <div class="content">
-
-      <div class="section-number">04</div>
-
-      <div class="feature-cards">
-
-        <div class="feature">
-          <div class="icon-circle"></div>
-          <h3 class="green">PRACTICAL LEARNING</h3>
-          <p>Learning by doing with experiments and real-world applications.</p>
-        </div>
-
-        <div class="feature">
-          <div class="icon-circle"></div>
-          <h3 class="red">SIMPLE & ENGAGING</h3>
-          <p>Breaking down complex ideas into relatable content.</p>
-        </div>
-
-        <div class="feature">
-          <div class="icon-circle"></div>
-          <h3 class="green">LOCALLY DRIVEN</h3>
-          <p>Solving African problems with global standards.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 06 -->
-  <div class="slide">
-    <div class="content">
-
-      <div class="section-number">05</div>
-      <div class="title">OUR IMPACT AREAS</div>
-
-      <div class="impact-grid">
-
-        <div class="impact">
-          <div class="icon-circle"></div>
-          <h3>EDUCATION</h3>
-          <p>Strengthening STEM education and literacy.</p>
-        </div>
-
-        <div class="impact">
-          <div class="icon-circle"></div>
-          <h3>INNOVATION</h3>
-          <p>Encouraging creativity and innovation.</p>
-        </div>
-
-        <div class="impact">
-          <div class="icon-circle"></div>
-          <h3>EMPOWERMENT</h3>
-          <p>Equipping young people with opportunities.</p>
-        </div>
-
-        <div class="impact">
-          <div class="icon-circle"></div>
-          <h3>DEVELOPMENT</h3>
-          <p>Driving sustainable social and economic growth.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 07 -->
-  <div class="slide">
-    <div class="content">
-
-      <div class="section-number">06</div>
-      <div class="title">OUR TARGET AUDIENCE</div>
-
-      <div class="people-row">
-
-        <div class="person">
-          <div class="icon-circle"></div>
-          STUDENTS
-        </div>
-
-        <div class="person">
-          <div class="icon-circle"></div>
-          UNIVERSITIES
-        </div>
-
-        <div class="person">
-          <div class="icon-circle"></div>
-          PROFESSIONALS
-        </div>
-
-        <div class="person">
-          <div class="icon-circle"></div>
-          TECH ENTHUSIASTS
-        </div>
-
-        <div class="person">
-          <div class="icon-circle"></div>
-          INSTITUTIONS
-        </div>
-
-        <div class="person">
-          <div class="icon-circle"></div>
-          PARTNERS
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 08 -->
-  <div class="slide">
-    <div class="content">
-
-      <div class="section-number">07</div>
-      <div class="title">PARTNERSHIPS & COLLABORATIONS</div>
-
-      <div class="partners">
-
-        <div class="handshake"></div>
-
-        <div class="check-list">
-
-          <div class="check">
-            <div class="dot"></div>
-            Schools & Educational Institutions
-          </div>
-
-          <div class="check">
-            <div class="dot"></div>
-            NGOs & Development Organizations
-          </div>
-
-          <div class="check">
-            <div class="dot"></div>
-            Tech Companies & Innovation Hubs
-          </div>
-
-          <div class="check">
-            <div class="dot"></div>
-            Government Agencies
-          </div>
-
-          <div class="check">
-            <div class="dot"></div>
-            Private Sector Organizations
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 09 -->
-  <div class="slide">
-    <div class="content">
-
-      <div class="section-number">08</div>
-      <div class="title">OUR FUTURE GOALS</div>
-
-      <div class="timeline">
-
-        <div class="step">
-          <div class="icon-circle"></div>
-          Innovation Hubs
-        </div>
-
-        <div class="step">
-          <div class="icon-circle"></div>
-          Online Academy
-        </div>
-
-        <div class="step">
-          <div class="icon-circle"></div>
-          Annual Events
-        </div>
-
-        <div class="step">
-          <div class="icon-circle"></div>
-          Expand Africa
-        </div>
-
-        <div class="step">
-          <div class="icon-circle"></div>
-          Grants & Partnerships
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 10 -->
-  <div class="slide dark">
-
-    <div class="contact">
-
-      <div class="contact-left">
-
-        <div class="logo"></div>
-
-        <h1>SCIENTIFIX AFRIKA</h1>
-
-        <h2 style="margin-top:15px;">
-          Fixing <span class="green">Africa</span> with Science & Innovation.
-        </h2>
-
-      </div>
-
-      <div class="vertical-line"></div>
-
-      <div class="contact-right">
-        <h2 class="green">GET IN TOUCH</h2>
-
-        <br/>
-
-        info@scientifixafrika.com<br/>
-        +234 000 000 0000<br/>
-        Nigeria<br/>
-        @scientifixafrika
-
-      </div>
-
-    </div>
-
-  </div>
+  </section>
 
 </div>
 
